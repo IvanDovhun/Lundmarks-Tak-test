@@ -1,0 +1,94 @@
+.calculation-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay if stacked */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050; /* Higher z-index than the first dialog */
+  padding: 20px;
+}
+
+.calculation-dialog-content {
+  background-color: white;
+  padding: 24px 32px;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 550px; /* Adjust as needed */
+  position: relative;
+  max-height: 90vh; /* Allow scrolling for long content */
+  overflow-y: auto;
+}
+
+.calculation-dialog-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  padding: 0; /* Remove padding if icon is self-contained */
+}
+.calculation-dialog-close-button .lucide-x { /* Target Lucide icon if needed */
+    width: 28px;
+    height: 28px;
+}
+
+
+.calculation-dialog-header {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.calculation-dialog-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+.date-time-stamp {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+.calculation-dialog-body {
+  font-size: 0.9rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0; /* Vertical padding for rows */
+  border-bottom: 1px solid #f9f9f9; /* Very light separator for rows */
+}
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: #444;
+  font-weight: 500; /* Make labels slightly bolder */
+  flex-basis: 45%; /* Give label some space */
+  padding-right: 10px;
+}
+
+.detail-value {
+  color: #555;
+  text-align: right;
+  flex-basis: 55%; /* Give value some space */
+}
+
+.highlighted-value {
+  background-color: #e0e7ff; /* Light blue highlight, similar to image */
+  color: #3730a3; /* Darker blue text for highlighted values */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: inline-block; /* To make background fit content */
+}

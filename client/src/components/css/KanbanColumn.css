@@ -1,0 +1,35 @@
+.kanban-column {
+  background-color: #f3f4f6; /* Light gray background for column */
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 320px; /* Minimum width for a column */
+  max-width: 380px; /* Maximum width for a column */
+  flex: 1; /* Allow columns to grow, but also have a base */
+  display: flex;
+  flex-direction: column;
+  height: fit-content; /* Or a fixed height with overflow-y: auto for column-cards */
+}
+
+.column-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.column-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between cards in a column */
+  overflow-y: auto; /* If columns have fixed height and many cards */
+  /* max-height: calc(100vh - 150px); /* Example: if you want scrolling within columns */
+}
+
+.empty-column-message {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px;
+  font-style: italic;
+}

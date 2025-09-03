@@ -1,0 +1,207 @@
+/* Add to your global CSS or component-specific CSS */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.dialog-content {
+  background-color: #F5F5F5;
+  padding: 1.5rem 3rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.dialog-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.dialog-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+.dialog-body {
+  display: flex;
+  gap: 24px; /* Space between form and progress bar */
+}
+
+.main-form-area {
+  flex-grow: 1;
+  min-height: 300px; /* Give some default height to the form area */
+}
+
+.step-content h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 16px; /* Space from the form content */
+}
+
+.progress-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #5A5A5A;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 3px solid #5A5A5A;
+  z-index: 1;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.progress-dot.active {
+  background-color: #C58F4C; /* Orange for reached/active */
+  border-color: #C58F4C;
+}
+.progress-dot.current {
+  /* Could add a slightly different style for the absolute current step if needed */
+  /* e.g., a stronger border or animation */
+}
+
+
+.progress-line {
+  width: 4px;
+  height: 3rem; /* Adjust height between dots */
+  background-color: #646464;
+  transition: background-color 0.3s;
+}
+
+.progress-line.active {
+  background-color: #E1A356; /* Orange for active line */
+}
+
+
+.dialog-footer {
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.skip-button {
+  background-color: transparent;
+  color: #818181;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+
+.take-photo-button {
+  background-color: #E1A356;
+  color: #19191B;
+  border: none;
+  align-items: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.3rem 1rem;
+  display: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .take-picture-button {
+    display: inline-flex; /* Or whatever your button's display is */
+  }
+}
+
+.file-uploader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 20rem;
+  padding: 0.6rem;
+  background-color: #FFFFFF;
+  border: 1px dashed #313131;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.file-upload-text {
+  color: #5D5D5D;
+  font-size: 0.8rem;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+
+.chosen-file-label {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+
+.save-button {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  border: 1px solid #d97706;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.save-button:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  border-color: #b45309;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Basic Button variants (replace with your UI library's approach) */
+button.outline { background-color: transparent; border: 1px solid #ccc; color: #333; }
+button.primary { background-color: lightgreen; color: black; border-color: lightgreen; }
+button.destructive { background-color: lightcoral; color: black; border-color: lightcoral; }
+button.link { background: none; border: none; color: #007bff; text-decoration: underline; padding:0; }
+button[disabled] { cursor: not-allowed; }

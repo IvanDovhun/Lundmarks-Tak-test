@@ -1,0 +1,151 @@
+.calculation-view-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.calculation-view-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90vw;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 0;
+}
+
+.calculation-view-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.calculation-view-close:hover {
+  color: #374151;
+}
+
+.calculation-view-header {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 24px 48px 20px 24px;
+  text-align: center;
+}
+
+.calculation-view-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.calculation-view-date {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.calculation-view-body {
+  padding: 24px;
+}
+
+.calculation-field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.calculation-field-row:last-child {
+  border-bottom: none;
+}
+
+.field-label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
+  flex: 1;
+}
+
+.field-value {
+  color: #111827;
+  font-size: 0.875rem;
+  text-align: right;
+  flex: 1;
+  font-weight: 400;
+}
+
+/* Highlight certain values */
+.field-value:has-text("Valmat"),
+.field-value:has-text("Tegel"),
+.field-value:has-text("Svart"),
+.field-value:has-text("Hel") {
+  font-weight: 600;
+  color: #059669;
+}
+
+/* Special styling for price fields */
+.calculation-field-row:last-child .field-value {
+  font-weight: 700;
+  color: #dc2626;
+  font-size: 1rem;
+}
+
+/* Scrollbar styling */
+.calculation-view-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.calculation-view-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.calculation-view-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.calculation-view-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .calculation-view-content {
+    width: 95vw;
+    max-height: 85vh;
+  }
+  
+  .calculation-view-header {
+    padding: 20px 40px 16px 20px;
+  }
+  
+  .calculation-view-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .calculation-view-body {
+    padding: 20px;
+  }
+  
+  .field-label,
+  .field-value {
+    font-size: 0.8rem;
+  }
+}
